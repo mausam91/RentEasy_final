@@ -15,10 +15,15 @@ fs.readFile(p, (err, fileContent) => {
 })
 }
 module.exports = class Product {
-    constructor(title) {
+    constructor(title,image,price,description) {
         this.title = title;
+        this.image= image;
+        this.price=price;
+        this.description=description
+        
     }
     save() {
+        this.id=Math.random().toString();
         getProductsfromFile(products=>{
             products.push(this);
 
